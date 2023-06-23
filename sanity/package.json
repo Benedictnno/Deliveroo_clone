@@ -1,5 +1,5 @@
 {
-  "name": "delivaroo-clone",
+  "name": "first-project",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
@@ -15,6 +15,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/core": "^2.36.1",
     "@sanity/vision": "^3.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

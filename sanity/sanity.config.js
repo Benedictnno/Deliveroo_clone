@@ -5,10 +5,10 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'Delivaroo-clone',
+  title: 'First-project',
 
-  projectId: 'epf4rx97',
-  dataset: 'sanity',
+  projectId: 'we1hf9yj',
+  dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
 

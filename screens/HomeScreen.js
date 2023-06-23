@@ -1,4 +1,4 @@
-import React, { Component, useLayoutEffect } from "react";
+import React, { Component, useLayoutEffect, useState, useEffect } from "react";
 import {
   Text,
   View,
@@ -16,10 +16,28 @@ import {
 } from "react-native-heroicons/outline";
 import Categories from "../components/Categories";
 import FeaturedRows from "../components/FeaturedRows";
+import sanityClient from "../Sanity";
 
 export function HomeScreen() {
   const navigation = useNavigation();
+  const [featuredCategory, setFeaturedCategory] = useState();
 
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == 'featured' ] {
+  ...,
+  resturant[]=>{
+    ...,
+    dishes[]=>{
+    }
+  }
+}`
+      )
+      .then((data) => {
+        setFeaturedCategory(data);
+      });
+  }, []);
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
